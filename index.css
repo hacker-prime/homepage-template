@@ -1,0 +1,833 @@
+ /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav   */
+ body{
+    margin: 0;
+}
+
+/* https://codepen.io/DraganaB/pen/xMOjgZ */
+html{
+	scroll-behavior: smooth;
+}
+
+ .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #FF4444;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+
+
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 3%;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .navButton .right { 
+    right: 3%;
+    top: 1%;
+    position: absolute;
+    color:#FF4444;
+    font-size: xx-large;
+}
+
+@media only screen and (min-width: 801px) {
+    /* For desktop: */
+     span{
+         display:none;
+     }
+   
+  }
+
+  section
+  {
+      /* position: absolute; */
+      width: 100%;
+      height: 100%;
+      /* background: #fff; */
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      /* https://stackoverflow.com/questions/24246914/website-wont-scroll-down */
+      overflow: hidden;
+      /* https://www.tomred.net/css-html-js/disable-or-enable-horizontal-or-vertical-scrollbar.html#:~:text=To%20disable%20the%20horizontal%20scrollbar,expands%20to%20exceed%20the%20space. */
+      overflow-x: hidden;
+      /* top: 0px; */
+  }
+  
+  .header
+  {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      padding: 0 10%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      display:row;
+      font-family: "Lato", sans-serif;
+      background:white;
+
+  }
+  .header .logo
+  {
+      /* opacity: 0; */
+      margin: 0;
+      padding: 0;
+      font-size: 2em;
+      /* text-transform: uppercase; */
+      color: #FF4444;
+  
+  }
+  .header ul
+  {
+      margin: 0;
+      padding: 0;
+      z-index: 100;
+      display: flex;
+  }
+  .header ul li
+  {
+      /* opacity: 0; */
+      list-style: none;
+      margin: 0 10px;
+      animation: fadeInRight 0.5s linear forwards;
+  }
+  .header ul li:last-child
+  {
+      margin-right: 0;
+  }
+  .header ul li a
+  {
+      text-decoration: none;
+      font-size: 1.2em;
+      color: black;
+      padding: 15px 10px;
+      letter-spacing: 2px;
+  }
+  .header ul li a.active,
+  .header ul li a:hover
+  {
+      background: #FF4444;
+      color: #fff;
+  }
+
+
+  @media only screen and (max-width: 800px) {
+    /* For desktop: */
+     section{
+         display:none;
+     }
+   
+  }
+
+  @media only screen and (max-width: 800px) {
+    /* For mobile: */
+     .logoMobile{
+         top:5px;
+         left: 5px;
+         position: absolute;
+         padding: 10px;
+         font-size: 1.5em;
+         text-decoration: none;
+         color:black;
+         font-family: "Lato", sans-serif;
+         font-weight: bold;
+         color:#FF4444;
+
+     }
+
+     .companySection1 {
+        padding-top: 0px !important;
+    }
+
+    .topSection2 {
+        text-align: center;
+        font-size: 1em !important;
+        padding: 10px;
+    }
+
+    .card__image {
+        /* padding-bottom: 60px !important; */
+       
+    }
+   
+  }
+
+  @media only screen and (min-width: 800px) {
+    /* For desktop: */
+     .logoMobile{
+        display: none;
+
+     }
+   
+  }
+  
+  .cards {
+    margin: 0 auto;
+    /* max-width: 1000px; */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(225px, 2fr)); */
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: auto;
+    /* gap: 20px; */
+    font-family: sans-serif;
+    padding-top: 175px;
+    /* position: absolute; */
+
+}
+
+.cardsAnalytics {
+    margin: 0 auto;
+    /* max-width: 1000px; */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(225px, 2fr)); */
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: auto;
+    /* gap: 20px; */
+    font-family: sans-serif;
+    padding-top: 10px;
+    padding-bottom:10%;
+    /* position: absolute; */
+
+}
+
+.division{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-auto-rows: auto;
+}
+
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+     .cards{
+        grid-template-columns: repeat(1,1fr);
+        padding-top: 50px;
+     }
+
+     .topSection{
+         padding-top: 0px !important;
+     }
+
+     .cardsAnalytics {
+        grid-template-columns: repeat(1,1fr);    
+     }
+   
+  }
+
+
+.cards * {
+    box-sizing: border-box;
+}
+
+.card__image {
+    width: 100%;
+    /* height: 200px; */
+    object-fit: cover;
+    display: block;
+    padding-bottom: 45px;
+    /* border-top: 2px solid #333333; */
+    /* border-right: 2px solid #333333; */
+    /* border-left: 2px solid #333333;
+    /* width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+}
+
+.card__image__companies{
+   padding-bottom: 0px !important; 
+   width: 100%;
+   object-fit: cover;
+   display: block;
+}
+
+.card__content {
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background: #fafafa;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+
+.card__content > p:first-of-type {
+    margin-top: 0;
+}
+
+.card__content > p:last-of-type {
+    margin-bottom: 0;
+}
+
+.card__info {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    background: #eeeeee;
+    font-size: 0.8em;
+    border-bottom: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+}
+
+.card__info i {
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+.card__link {
+    color: #64968c;
+    text-decoration: none;
+}
+
+.card__link:hover {
+    text-decoration: underline;
+}
+
+.topSection{
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 25px;
+    text-transform: uppercase;
+}
+
+.topSection2{
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    
+}
+
+.deliverySection{
+    text-align: center;
+}
+
+.wrapper{
+    float:left;
+    width:100%;
+    text-align:center;
+  }
+
+  /* https://codepen.io/lauraeddy/pen/KXEwOW?editors=1100 */
+  .button{
+    display: inline-block;
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: #000;
+    border: 0;
+    padding: 20px 20px;
+    line-height: 0.428571;
+    background-color: white;
+    color:#FF4444;
+    border:2px solid #FF4444;
+
+  }
+
+  .button2{
+    display: inline-block;
+    color: #fff;
+    font-family: helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: #FF4444;
+    border: 0;
+    padding: 20px 20px;
+    line-height: 0.428571;
+    border:2px solid #FF4444;
+
+
+  }
+
+  .customerTopSection{
+      text-decoration: none;
+      color:white;
+  }
+
+  /* .company{
+      text-align: center;
+      font-size: 2.5em;
+      font-family: "Lato", sans-serif;
+      padding-top: 100px;
+
+      
+  } */
+
+  /* Solid border */
+/* hr.solid {
+    border-top: 3px solid black;
+    position: relative;
+    top: 50px;
+  } */
+
+.companySection1{
+    text-decoration: none;
+    padding-top: 50px;
+}
+
+.companySection{
+    /* padding-top:250px; */
+}
+  
+.driverButton{
+    text-decoration: none;
+    color:#FF4444;
+}
+
+.companyButton{
+    text-decoration: none;
+    color:#FF4444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Services Section */
+
+/* .card2{
+    padding-top: 50px;
+} */
+
+.cards2 {
+    margin: 0 auto;
+    /* max-width: 1000px; */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(225px, 2fr)); */
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: auto;
+    /* gap: 20px; */
+    font-family: sans-serif;
+    padding-top: 175px;
+    position: absolute;
+
+}
+
+.aboutSectionImg{
+    /* height: 100vh; */
+    width: 90% !important;
+    padding: 5%;    
+ }
+
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+     .cards{
+        grid-template-columns: repeat(1,1fr);
+        padding-top: 50px;
+     }
+
+     .topSection{
+         padding-top: 0px !important;
+     }
+
+     .cardDelivery{
+     padding-top:0px; 
+     padding: 5px;      
+     }
+
+     .transportationCard{
+     padding-top:0px !important;    
+     }
+
+     .card__info2 {
+     padding:0px !important;    
+     }
+
+     .aboutSectionImg{
+        height: 50vh;
+        width: 90%;
+        padding: 5%;    
+     }
+   
+  }
+
+
+.cards * {
+    box-sizing: border-box;
+}
+
+.card__image2 {
+    width: 100%;
+    /* height: 200px; */
+    object-fit: cover;
+    display: block;
+    padding-bottom: 45px;
+    /* border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+    width: 100%;
+    /* height: 200px; */
+    object-fit: cover;
+    display: block;
+    /* border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+}
+
+.card__content2 {
+    /* line-height: 1.5; */
+    font-size: 2.5em;
+    /* padding: 15px;
+    background: white; */
+    font-family: "Lato", sans-serif;
+    /* border-right: 2px solid #333333;
+    border-left: 2px solid #333333;
+  */
+}
+
+.deliveryContent{
+    font-size: 1.5em;
+    font-family: "Lato", sans-serif;
+}
+
+.transportationContent{
+    font-size: 1.5em;
+    font-family: "Lato", sans-serif;
+}
+
+@media only screen and (max-width: 800px) {
+    .deliveryContent {
+        font-size: 1em !important;
+    }
+    .transportationContent{
+        font-size: 1em !important;
+        padding-bottom: 11% !important;
+    }
+}
+
+.servicesSectionContent{
+    text-align: center;
+}
+
+.card__info2 {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    /* background: #eeeeee; */
+    font-size: 0.8em;
+    /* border-bottom: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+}
+
+.card__info2 i {
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+#nabvar{
+    top: 0px;
+    
+}
+
+/* https://codepen.io/sitanotern1337/pen/MPVbeL
+I had to modify the code a bit. It's similar to the code shown in this video
+https://www.youtube.com/watch?v=V9CY0F4Wc7M (The "scroll" event in JavaScript | window.onscroll) */
+.hide {
+    display: none;
+  }
+  
+  
+
+  /* https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript?noredirect=1&lq=1   */
+#top-page {
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    color: white;
+    display: none;
+  }
+
+
+  .cardsServices {
+    margin: 0 auto;
+    /* max-width: 1000px; */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(225px, 2fr)); */
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: auto;
+    /* gap: 20px; */
+    font-family: sans-serif;
+    /* padding-top: 175px; */
+    /* position: absolute; */
+
+}
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+     .cardsServices{
+        grid-template-columns: repeat(1,1fr);
+        padding-top: 50px;
+     }
+
+     .cardDelivery{
+     padding-top:0px;    
+     }
+
+     .cardDeliveryImg{
+     padding-top:0px; 
+     padding-bottom:0px !important;   
+     }
+
+     .card__image2{
+     padding-bottom:0px !important;      
+     }
+
+     .topSection{
+         padding-top: 0px !important;
+     }
+   
+  }
+
+  .servicesHeader{
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 30px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+
+  .contactHeader{
+    text-align: center;
+    font-size: 1.5em;
+    /* padding-top: 30px; */
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+
+
+  .cardsContact {
+    margin: 0 auto;
+    /* max-width: 1000px; */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(225px, 2fr)); */
+    grid-template-columns: repeat(1,1fr);
+    grid-auto-rows: auto;
+    /* gap: 20px; */
+    font-family: sans-serif;
+    /* padding-top: 175px; */
+    /* position: absolute; */
+
+}
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+     .cardsContact{
+        grid-template-columns: repeat(1,1fr);
+        padding-top: 50px;
+     }
+
+     .topSection{
+         padding-top: 0px !important;
+     }
+   
+  }
+
+  .card__image3 {
+    width: 50% !important;
+    margin:auto;
+    /* height: 200px; */
+    object-fit: cover;
+    display: block;
+    /* padding-bottom: 45px; */
+    /* border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+    width: 100%;
+    /* height: 200px; */
+    object-fit: cover;
+    display: block;
+    /* border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    border-left: 2px solid #333333; */
+}
+
+.card__content3 {
+    /* font-size: 2em;    */
+    font-family: "Lato", sans-serif;
+}
+
+
+@media only screen and (max-width: 770px) {
+    /* For mobile: */
+    .card__image3 {
+        width: 100% !important;
+    
+      
+    }
+
+    .aboutContent{
+        font-size: 1.5em;
+
+    }
+
+    .aboutcard2{
+     padding-top:0px;
+    }
+
+    .aboutContent{
+     font-size: 1em !important;
+     padding:5px;   
+    }
+   
+  }
+
+
+
+
+
+
+
+
+
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+a, a:hover {
+	text-decoration: none;
+}
+
+.socialbtns, .socialbtns ul, .socialbtns li {
+  margin: 0;
+  padding: 5px;
+}
+
+.socialbtns li {
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.socialbtns .fa {
+	width: 40px;
+    height: 28px;
+	color: #000;
+	background-color: #FFF;
+	border: 1px solid #000;
+	padding-top: 12px;
+	border-radius: 22px;
+	-moz-border-radius: 22px;
+	-webkit-border-radius: 22px;
+	-o-border-radius: 22px;
+}
+
+/* .socialbtns .fa:hover {
+	color: #FFF;
+	background-color: #FF4444;
+	border: 1px solid #000;
+} */
+
+
+.socialbtns .fa-facebook:hover {
+	color: #FFF;
+	background-color: #FF4444;
+	border: 1px solid #000;
+}
+
+.socialbtns .fa-twitter:hover {
+	color: #FFF;
+	background-color: #FF4444;
+	border: 1px solid #000;
+}
+
+.socialbtns .fa-instagram:hover {
+	color: white;
+    border: 1px solid #000; 
+    background: #FF4444;
+   
+
+}
+
+
+
+.socialbtns .fa-facebook{
+    color:blue;
+  }
+  
+  .socialbtns .fa-twitter{
+    color:#87CEFA;
+  }
+  
+  /* https://stackoverflow.com/questions/56574105/how-to-add-a-color-gradient-to-the-instagram-logo-without-affecting-the-visibili */
+  .socialbtns .fa-instagram{
+    color: transparent;
+    background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+
+
+  .email{
+    text-align: center;
+    /* font-size: 1em; */
+    /* padding-top: 30px; */
+    font-family: sans-serif;
+    font-weight: bold;
+    color:black;
+  }
+
+  .email :hover{
+      color:#FF4444;
+  }
